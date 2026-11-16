@@ -1,0 +1,15 @@
+numpy
+pandas
+scipy
+scikit-learn
+xgboost
+pyradiomics
+SimpleITK
+pydicom
+pynrrd
+streamlit
+matplotlib
+openpyxl
+pingouin
+torch
+torchvision
