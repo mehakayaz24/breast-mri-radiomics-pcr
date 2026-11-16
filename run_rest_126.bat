@@ -1,0 +1,15 @@
+@echo off
+REM Runs all 126-patient analyses one after another. Logs are saved in retrain_126\logs. Does NOT touch the 12 test patients.
+cd /d C:\Users\ntech\Desktop\retrain_126
+if not exist logs mkdir logs
+echo [1/4] train_multi_models.py ...
+python train_multi_models.py > logs\2_train_multi_models.txt 2>&1
+echo [2/4] train_advanced_models.py ...
+python train_advanced_models.py > logs\3_train_advanced_models.txt 2>&1
+echo [3/4] train_nested_tuning.py (slowest) ...
+python train_nested_tuning.py > logs\4_train_nested_tuning.txt 2>&1
+echo [4/4] train_final_models.py ...
+python train_final_models.py > logs\5_train_final_models.txt 2>&1
+echo.
+echo DONE. Send me the text files in C:\Users\ntech\Desktop\retrain_126\logs
+pause
